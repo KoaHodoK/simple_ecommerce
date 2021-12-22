@@ -4,6 +4,17 @@ import 'package:equatable/equatable.dart';
 class Cart extends Equatable {
   final List<Product> products;
   const Cart({this.products = const <Product>[]});
+  Map productQuantity(products) {
+    var quantity = Map();
+    products.forEach((p) {
+      if (!quantity.containsKey(p)) {
+        quantity[p] = 1;
+      } else {
+        quantity[p] += 1;
+      }
+    });
+    return quantity;
+  }
 
 //subtotal calculation
   double get subtotal => products.fold(0, (total, p) => total += p.price);
