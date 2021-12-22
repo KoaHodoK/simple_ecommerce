@@ -1,3 +1,5 @@
+import 'package:ecommerce_app/models/category_model.dart';
+import 'package:ecommerce_app/models/product_model.dart';
 import 'package:ecommerce_app/screens/cart_screen.dart';
 import 'package:ecommerce_app/screens/catalog_screen.dart';
 import 'package:ecommerce_app/screens/home_screen.dart';
@@ -19,9 +21,9 @@ class AppRouter {
       case WhishListScreen.routeName:
         return WhishListScreen.route();
       case ProductScreen.routeName:
-        return ProductScreen.route();
+        return ProductScreen.route(pp: settings.arguments as Product);
       case CatalogScreen.routeName:
-        return CatalogScreen.route();
+        return CatalogScreen.route(category: settings.arguments as Category);
       case ProfileScreen.routeName:
         return ProfileScreen.route();
       default:
