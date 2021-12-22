@@ -5,6 +5,7 @@ import 'package:ecommerce_app/screens/catalog_screen.dart';
 import 'package:ecommerce_app/screens/home_screen.dart';
 import 'package:ecommerce_app/screens/product_screen.dart';
 import 'package:ecommerce_app/screens/profile_screen.dart';
+import 'package:ecommerce_app/screens/splash_screen.dart';
 import 'package:ecommerce_app/screens/whish_list_screen.dart';
 import 'package:ecommerce_app/widgets/custom_appbar.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,6 +19,8 @@ class AppRouter {
         return HomeScreen.route();
       case CartScreen.routeName:
         return CartScreen.route();
+      case SplashScreen.routeName:
+        return SplashScreen.route();
       case WhishListScreen.routeName:
         return WhishListScreen.route();
       case ProductScreen.routeName:
