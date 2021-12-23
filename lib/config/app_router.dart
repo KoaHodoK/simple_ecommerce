@@ -2,6 +2,7 @@ import 'package:ecommerce_app/models/category_model.dart';
 import 'package:ecommerce_app/models/product_model.dart';
 import 'package:ecommerce_app/screens/cart_screen.dart';
 import 'package:ecommerce_app/screens/catalog_screen.dart';
+import 'package:ecommerce_app/screens/check_out_screen.dart';
 import 'package:ecommerce_app/screens/home_screen.dart';
 import 'package:ecommerce_app/screens/product_screen.dart';
 import 'package:ecommerce_app/screens/profile_screen.dart';
@@ -29,6 +30,8 @@ class AppRouter {
         return CatalogScreen.route(category: settings.arguments as Category);
       case ProfileScreen.routeName:
         return ProfileScreen.route();
+      case CheckOutScreen.routeName:
+        return CheckOutScreen.route();
       default:
         return _errorRoute();
     }
