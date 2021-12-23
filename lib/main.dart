@@ -1,7 +1,11 @@
 import 'package:ecommerce_app/blocs/cart/bloc/cart_bloc.dart';
+import 'package:ecommerce_app/blocs/category/bloc/category_bloc.dart';
+import 'package:ecommerce_app/blocs/products/bloc/product_bloc.dart';
 import 'package:ecommerce_app/blocs/wishlist/whishlist_bloc_bloc.dart';
 import 'package:ecommerce_app/config/app_router.dart';
 import 'package:ecommerce_app/config/theme.dart';
+import 'package:ecommerce_app/repositories/category/category_repository.dart';
+import 'package:ecommerce_app/repositories/product/product_repository.dart';
 import 'package:ecommerce_app/screens/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +26,13 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => WhishlistBlocBloc()..add(StarWishList())),
         BlocProvider(create: (_) => CartBloc()..add(CartStarted())),
+        BlocProvider(
+            create: (_) =>
+                CategoryBloc(categoryRepository: CategoryRepository())
+                  ..add(LoadCategories())),
+        BlocProvider(
+            create: (_) => ProductBloc(productRepository: ProductRepository())
+              ..add(LoadProducts())),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
